@@ -28,49 +28,45 @@
     border-radius: 50%;
     border-style: solid;
     border-width: 10px;
-    border-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255, 0.8);
     box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
   }
 
 
   .hours {
-    width: 4px;
-    height: 45%;
-    margin-top: 5%;
-    position: absolute;
-    background-color: rgb(59, 127, 230);
-    transform-origin: bottom center;
-    transform: rotate(110deg);
-
-    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
-  }
-  .minutes {
-    width: 2px;
-    height: 40%;
-    margin-top: 10%;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    transform-origin: bottom center;
-    transform: rotate(45deg);
-
-    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
-  }
-
-  .seconds {
-    width: 1px;
+    width: 6px;
     height: 35%;
     margin-top: 15%;
     position: absolute;
-    background-color: rgb(209, 58, 58);
+    background-color: rgba(0, 78, 194, 0.8);
+    transform-origin: bottom center;
+    transform: rotate(110deg);
+  }
+  .minutes {
+    width: 4px;
+    height: 40%;
+    margin-top: 10%;
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.8);
+    transform-origin: bottom center;
+    transform: rotate(45deg);
+  }
+
+  .seconds {
+    width: 2px;
+    height: 52%;
+    margin-top: -2%;
+    position: absolute;
+    background-color: rgb(209, 58, 58, 0.8);
     transform-origin: bottom center;
     transform: rotate(95deg);
-
-    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
   }
 
  .hand {
     transition-timing-function: cubic-bezier(0.1,2.7,0.58,1);
     transition: all 0.05s;
+    border-radius: 1px;
+    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
   }
 
   .hand::after {
