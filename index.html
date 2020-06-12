@@ -29,6 +29,7 @@ Ideas:
 - color numbers in front of arrows
 - change orientation of box shadow on each rotation, so we think there's a light upon the clock 
 - make a circle at the center of clock with "paris" in there
+- display date under the clock
 
 
 -->
@@ -36,11 +37,39 @@ Ideas:
 <script>
 
 
+function setDate(){
 
 
+var refreshTime = 1;
+
+const hoursHand = document.getElementsByClassName('hours');
+const minutesHand = document.getElementsByClassName('minutes');
+const secondsHand = document.getElementsByClassName('seconds');
 
 
+setInterval( function(){
 
+    time = 1000;
+
+    const dateNow = new Date();
+    var dateHours = dateNow.getHours();
+    var dateMinutes = dateNow.getMinutes();
+    var dateSeconds = dateNow.getSeconds();
+
+    var rotateHours = dateHours*(360/24);
+    var rotateMinutes = dateMinutes*(360/60);
+    var rotateSeconds = dateSeconds*(360/60);
+
+    hoursHand[0].style.transform = `rotate(${rotateHours}deg)`;
+    minutesHand[0].style.transform = `rotate(${rotateMinutes}deg)`;
+    secondsHand[0].style.transform = `rotate(${rotateSeconds}deg)`;
+
+    }, refreshTime);
+
+}
+
+
+setDate()
 
 
 </script>
