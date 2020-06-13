@@ -10,11 +10,13 @@
     
 
 <div class="centered">
+    <div class="circle"></div>
     <div class="inner-circle">
         <div class="hours hand"></div>
         <div class="minutes hand"></div>
         <div class="seconds hand"></div>
     </div>
+
 </div>
 
 
@@ -22,7 +24,6 @@
 <!-- 
 
 Ideas:
-- make background image switch about hours
 - searching inspiration about clock design
 - put img in back of the clock
 - recording something each hours/minutes (input ?)
@@ -64,12 +65,42 @@ setInterval( function(){
     minutesHand[0].style.transform = `rotate(${rotateMinutes}deg)`;
     secondsHand[0].style.transform = `rotate(${rotateSeconds}deg)`;
 
+    changeBackground()
+
+    function changeBackground() {
+        if (dateHours >= 5 && dateHours < 9) {
+            document.getElementsByTagName('html')[0].style.background = "url('images/early_morning.jpg') no-repeat center";
+        }
+        else if (dateHours >= 9 && dateHours < 12) {
+            document.getElementsByTagName('html')[0].style.background = "url('images/morning.jpg') no-repeat center";
+        }
+        else if (dateHours >= 12 && dateHours < 17) {
+            document.getElementsByTagName('html')[0].style.background = "url('images/afternoon.jpg') no-repeat center";
+        }
+        else if (dateHours >= 17 && dateHours < 19) {
+            document.getElementsByTagName('html')[0].style.background = "url('images/late_afternoon.jpg') no-repeat center";
+        }
+        else if (dateHours >= 19 && dateHours < 22) {
+            document.getElementsByTagName('html')[0].style.background = "url('images/early_night.jpg') no-repeat center";
+        }
+        else {
+            document.getElementsByTagName('html')[0].style.background = "url('images/night.jpg') no-repeat center";
+        }
+    }
+
     }, refreshTime);
+
+
+setInterval( function (){
+    const innerCircle = document.getElementsByClassName('inner-circle')[0].style.background = "url(images/night.jpg) rgba(1, 255, 255, 0.5)";
+}, 1000)
+
 
 }
 
 
 setDate()
+
 
 
 </script>
