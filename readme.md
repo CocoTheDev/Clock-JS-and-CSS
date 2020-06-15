@@ -1,5 +1,5 @@
 
-#  Vanilla JavaScript Project  (8h)  
+#  Clock Project - CSS & JS (Vanilla) - (8h) 
 ####  GitHub  Page : [https://cocothepimp.github.io/Clock-JS-and-CSS/](https://cocothepimp.github.io/Clock-JS-and-CSS/)
   
 ##  Goals and  origins  of the  project :  
@@ -16,7 +16,7 @@ In this  case,  I  added  a function to **change the background in relation of t
 ##  Things  that  challenges  me :  
 - Background image moves when I tried to center the clock (fixed by "height: 100vh")
 - Making the clock most design as possible (i'm not designer ok ? haha)
-- Find a method to refreshing clock, wich cost less ressources as possible (the best way can be: call one time the date() methode, and then increment a counter for seconds minutes and hours rotation, otherwise calling date() each second to refresh the clock)
+- Find a method to refreshing clock, wich cost less resources as possible (the best way can be: call one time the date() methode, and then increment a counter for seconds minutes and hours rotation, otherwise calling date() each second to refresh the clock)
 - Tried to add an arrow with clip path at the end of each hands, but didn't manage to rotate it
 - Save my time and not spend it on making this little project responsive
   
