@@ -28,14 +28,14 @@ Ideas:
 - put img in back of the clock
 - recording something each hours/minutes (input ?)
 - color numbers in front of arrows
-- change orientation of box shadow on each rotation, so we think there's a light upon the clock 
-- make a circle at the center of clock with "paris" in there
 - display date under the clock
 
 
 -->
 
 <script>
+
+
 
 function setDate(){
 
@@ -48,7 +48,7 @@ function setDate(){
         var image = 'early_morning';
         
         const dateNow = new Date();
-        var dateHours = dateNow.getHours();
+        var dateHours = 15;
         var dateMinutes = dateNow.getMinutes();
         var dateSeconds = dateNow.getSeconds();
 
@@ -60,7 +60,7 @@ function setDate(){
         minutesHand[0].style.transform = `rotate(${rotateMinutes}deg)`;
         secondsHand[0].style.transform = `rotate(${rotateSeconds}deg)`;
 
-        function changeBackground() {
+        function changeDesign() {
             if (dateHours >= 5 && dateHours < 9) {
                 image = 'early_morning';
             }
@@ -81,22 +81,21 @@ function setDate(){
             }
             
             document.getElementsByTagName('html')[0].style.background = `url('images/${image}.jpg') no-repeat center`;
+
+            document.getElementsByClassName('inner-circle')[0].style.background = `url(images/${image}.jpg) rgba(255, 1, 1, 0.5)`;
+
+
+            
         }
 
-        changeBackground()
-
+        changeDesign();
         }, 1000);
-
-
-/*     setInterval( function (){
-        const innerCircle = document.getElementsByClassName('inner-circle')[0].style.background = `url(images/${image}.jpg) rgba(1, 255, 255, 0.5)`;
-    }, 1000)  */
-
 
 }
 
 
 setDate()
+
 
 
 </script>
