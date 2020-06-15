@@ -27,25 +27,22 @@
     border-style: solid;
     border-width: 10px;
     border-color: rgb(255, 255, 255);
-    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.31);
-    background: url(images/night.jpg) rgba(1, 255, 255, 0.2);
-    background-blend-mode: multiply;
-    animation-duration: 10s;
+    box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.3);
+    background: url(images/night.jpg);
+    background-size: cover;
+    animation: clockBackgroundChanging 5s linear infinite alternate; 
 
   }
   
-/*   @keyframes clockBackgroundChanging {
+   @keyframes clockBackgroundChanging {
     0% {
-      background: rgba(1, 255, 255, 0.2);
-      background-size: contain;
-      background-repeat: no-repeat;
+      background: rgba(1, 255, 255, 0.15);
     }
     
-      100% {
-      background: rgba(255, 1, 1, 0.2);
-      background-size: center;
+    100% {
+      background: rgba(255, 1, 1, 0.15);
     }
-  } */
+  } 
 
 
   .hours {
