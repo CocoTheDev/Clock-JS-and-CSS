@@ -10,28 +10,25 @@
     
 
 <div class="centered">
+
+    <div class="container">
+        <div class="date"></div>
+    </div>
+
     <div class="circle"></div>
+
     <div class="inner-circle">
         <div class="hours hand"></div>
         <div class="minutes hand"></div>
         <div class="seconds hand"></div>
     </div>
 
+    <div class="container">
+        <div class="time"></div>
+    </div>
+
 </div>
 
-
-
-<!-- 
-
-Ideas:
-- searching inspiration about clock design
-- put img in back of the clock
-- recording something each hours/minutes (input ?)
-- color numbers in front of arrows
-- display date under the clock
-
-
--->
 
 <script>
 
@@ -45,20 +42,26 @@ function setDate(){
 
 
     setInterval ( function(){
+        
         var image = 'early_morning';
         
+        const today = new Date().toISOString().slice(0, 10);
         const dateNow = new Date();
-        var dateHours = 15;
-        var dateMinutes = dateNow.getMinutes();
-        var dateSeconds = dateNow.getSeconds();
+        const dateHours = dateNow.getHours();
+        const dateMinutes = dateNow.getMinutes();
+        const dateSeconds = dateNow.getSeconds();
 
-        var rotateHours = dateHours*(360/12);
-        var rotateMinutes = dateMinutes*(360/60);
-        var rotateSeconds = dateSeconds*(360/60);
+        const rotateHours = dateHours*(360/12);
+        const rotateMinutes = dateMinutes*(360/60);
+        const rotateSeconds = dateSeconds*(360/60);
 
         hoursHand[0].style.transform = `rotate(${rotateHours}deg)`;
         minutesHand[0].style.transform = `rotate(${rotateMinutes}deg)`;
         secondsHand[0].style.transform = `rotate(${rotateSeconds}deg)`;
+
+
+        document.getElementsByClassName('time')[0].textContent = `${today}`;
+        document.getElementsByClassName('date')[0].textContent = `${dateHours} : ${dateMinutes} : ${dateSeconds}`;
 
         function changeDesign() {
             if (dateHours >= 5 && dateHours < 9) {
@@ -81,13 +84,10 @@ function setDate(){
             }
             
             document.getElementsByTagName('html')[0].style.background = `url('images/${image}.jpg') no-repeat center`;
-
-            document.getElementsByClassName('inner-circle')[0].style.background = `url(images/${image}.jpg)`;
-            
         }
 
         changeDesign();
-        }, 1000);
+        }, 100);
 
 }
 
